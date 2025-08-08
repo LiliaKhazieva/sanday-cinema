@@ -1,6 +1,7 @@
 import { useFiltersStore } from "@/store/store";
-import { ReceiptSwissFranc } from "lucide-react";
+import { ReceiptSwissFranc, RotateCcw } from "lucide-react";
 import { usePathname, useRouter } from "next/navigation";
+import s from "./ResetButton.module.scss";
 
 export function ResetButton() {
   const { reset } = useFiltersStore();
@@ -13,8 +14,8 @@ export function ResetButton() {
   };
 
   return (
-    <button onClick={resetHandler}>
-      <ReceiptSwissFranc size={25} color="#fff" />
+    <button onClick={resetHandler} className={s.btn}>
+      <RotateCcw size={18} color="#fff" />
     </button>
   );
 }

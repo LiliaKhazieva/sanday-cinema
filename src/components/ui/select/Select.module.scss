@@ -1,0 +1,18 @@
+.container {
+  width: 160px;
+}
+.selected {
+  background-color: #6c608883;
+  padding: 10px 20px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  :last-child {
+    margin-left: 5px;
+  }
+}
+
+.list {
+  background-color: #6c608883;
+  width: 100%;
+}

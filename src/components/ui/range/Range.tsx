@@ -37,7 +37,7 @@ export function Range({
   }, [debouncedToValue]);
 
   return (
-    <div style={{ width: "200px" }}>
+    <div style={{ width: "100%" }}>
       <Slider
         range
         min={min}
@@ -55,14 +55,20 @@ export function Range({
           borderColor: "lightblue",
           height: 15,
           width: 15,
-          // marginLeft: -10,
-          // marginTop: -5,
           backgroundColor: "lightblue",
         }}
       />
-      <div>
-        <span>Oт: ${fromInitialValue}</span>
-        <span>До: ${toInitialValue}</span>
+      <div
+        style={{
+          fontSize: "14px",
+          display: "flex",
+          justifyContent: "space-between",
+          paddingTop: "5px",
+          opacity: 0.7,
+        }}
+      >
+        <span>Oт: {fromInitialValue}$</span>
+        <span>До: {toInitialValue}$</span>
       </div>
     </div>
   );

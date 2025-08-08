@@ -1,5 +1,5 @@
 import { EnumMovieSort } from "@/services/movie.types";
-import { ISelectItem } from "@/ui/select/select.interface";
+import { ISelectItem } from "@/components/ui/select/select.interface";
 
 export const SORT_SELECT_DATA: ISelectItem<EnumMovieSort>[] = [
   {

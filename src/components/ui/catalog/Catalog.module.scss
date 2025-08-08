@@ -1,0 +1,17 @@
+.list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(151px, 1fr));
+  gap: 20px;
+  margin: 20px 0;
+  .item {
+    margin-bottom: 5px;
+    position: relative;
+    .rating {
+      position: absolute;
+      top: 5px;
+      right: 5px;
+      color: #ff6738;
+      font-size: 15px;
+    }
+  }
+}

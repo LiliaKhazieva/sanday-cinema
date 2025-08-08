@@ -4,6 +4,8 @@ import { IMovie } from "@/types/movie.interface";
 import { motion } from "framer-motion";
 import { Star } from "lucide-react";
 import Image from "next/image";
+import s from "../Catalog.module.scss";
+import { convertPrice } from "@/utils/convert-price";
 
 export const MovieItem = ({ movie }: { movie: IMovie }) => {
   if (!movie) return null;
@@ -14,9 +16,9 @@ export const MovieItem = ({ movie }: { movie: IMovie }) => {
       animate={{ opacity: 1, scale: 1, y: 0 }}
       transition={{ duration: 1, ease: "easeOut" }}
     >
-      <div>
-        <div>
-          <Star /> <span>{movie.rating}</span>
+      <div className={s.item}>
+        <div className={s.rating}>
+          <Star size={13} fill="#FF6738" /> <span>{movie.rating}</span>
         </div>
         <Image
           width={151}
@@ -27,7 +29,7 @@ export const MovieItem = ({ movie }: { movie: IMovie }) => {
         />
       </div>
       {movie.title}
-      <div>{movie.price}</div>
+      <div>{convertPrice(movie.price)}</div>
     </motion.div>
   );
 };

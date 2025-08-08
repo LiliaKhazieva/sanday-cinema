@@ -15,11 +15,8 @@ const Checkbox: FC<PropsWithChildren<ICheckBox>> = ({
   children,
 }) => {
   return (
-    <button className={cn(s.checkbox, className)} onClick={onClick}>
-      <div
-        style={{ width: "10px", height: "10px", backgroundColor: "#fff" }}
-        className={cn({ [s.active]: isChecked })}
-      />
+    <button className={cn(s.content, className)} onClick={onClick}>
+      <div className={cn(s.checkbox, { [s.active]: isChecked })} />
       <span>{children}</span>
     </button>
   );

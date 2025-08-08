@@ -1,0 +1,19 @@
+.content {
+  background-color: transparent;
+  border: none;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  padding: 5px 0;
+  > .checkbox {
+    width: 10px;
+    height: 10px;
+    background-color: transparent;
+    border: 1px #cdbfbf solid;
+    border-radius: 2px;
+  }
+  .active {
+    background-color: #fe6738;
+    border-color: #fe6738;
+  }
+}

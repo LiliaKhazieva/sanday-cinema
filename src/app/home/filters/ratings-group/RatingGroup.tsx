@@ -1,4 +1,4 @@
-import Checkbox from "@/ui/checkbox/Checkbox";
+import Checkbox from "@/components/ui/checkbox/Checkbox";
 import { FilterWrapper } from "../FilterWrapper";
 import { useFilters } from "../useFilters";
 import { RATING_VARIANTS } from "./rating-variants.data";
@@ -16,8 +16,8 @@ const RatingGroup = () => {
           key={rating}
         >
           <span>
-            <Star />
-            {">"}
+            <Star size={14} />
+            {" > "}
             {rating}
           </span>
         </Checkbox>

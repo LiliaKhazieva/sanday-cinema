@@ -9,7 +9,7 @@ interface IFilterWrapper {
 export function FilterWrapper({ title, children }: IFilterWrapper) {
   return (
     <div>
-      <div>{title}</div>
+      <div style={{ marginBottom: "10px" }}>{title}</div>
       <div>{children}</div>
     </div>
   );

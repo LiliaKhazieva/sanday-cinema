@@ -1,3 +1,4 @@
+import s from "./Pagination.module.scss";
 interface IPagination {
   numberPages: number; // сколько всего страниц
   changePage: (page: string) => void; // функция для изменения страницы
@@ -11,9 +12,13 @@ const Pagination = ({ numberPages, changePage, currentPage }: IPagination) => {
         const pageNumber = (i + 1).toString();
         return (
           <button
+            className={s.btn}
+            key={i}
             onClick={() => changePage(pageNumber)}
             disabled={currentPage === pageNumber}
-          ></button>
+          >
+            {pageNumber}
+          </button>
         );
       })}
     </div>

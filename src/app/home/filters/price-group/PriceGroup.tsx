@@ -1,4 +1,4 @@
-import { Range } from "@/ui/range/Range";
+import { Range } from "@/components/ui/range/Range";
 import { FilterWrapper } from "../FilterWrapper";
 import { useFilters } from "../useFilters";
 

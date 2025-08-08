@@ -4,10 +4,10 @@ import RatingGroup from "./ratings-group/RatingGroup";
 import { ResetButton } from "./ResetButton";
 import SearchField from "./search-field/SearchField";
 import { Switcher } from "./switcher/Switcher";
-
+import s from "./Filters.module.scss";
 export function Filters() {
   return (
-    <div>
+    <div className={s.filters}>
       <SearchField />
       <PriceGroup />
       <GenreGroup />

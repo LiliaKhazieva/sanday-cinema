@@ -4,7 +4,7 @@ import { useQuery } from "@tanstack/react-query";
 import { useFilters } from "./useFilters";
 import { MovieService } from "@/services/movie.service";
 import SortDropdown from "../sort/SortDropdown";
-import { Catalog } from "@/ui/catalog/Catalog";
+import { Catalog } from "@/components/ui/catalog/Catalog";
 import Pagination from "../pagination/Pagination";
 import Filters from "./Filters";
 
@@ -20,9 +20,8 @@ export function MoviesPage() {
     <div>
       <h1>Movies</h1>
       <SortDropdown />
-      <Filters />
       <Catalog
-        movies={data?.movies}
+        movies={data?.movies || []}
         isLoading={isLoading || isFetching || isRefetching || isPending}
       />
       <Pagination

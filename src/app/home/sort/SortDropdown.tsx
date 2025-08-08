@@ -1,4 +1,4 @@
-import { Select } from "@/ui/select/Select";
+import { Select } from "@/components/ui/select/Select";
 import { useFilters } from "../filters/useFilters";
 import { SORT_SELECT_DATA } from "./sort-select.data";
 import { EnumMovieSort } from "@/services/movie.types";
@@ -11,7 +11,7 @@ const SortDropdown = () => {
         data={SORT_SELECT_DATA}
         onChange={(value) => updatetQueryParams("sort", value.key.toString())}
         value={SORT_SELECT_DATA.find((value) => value.key === queryParams.sort)}
-        title="Sort by"
+        title="Sort by: "
       />
     </div>
   );

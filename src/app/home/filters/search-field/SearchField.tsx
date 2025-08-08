@@ -2,6 +2,7 @@ import { useDebounce } from "@/hooks/useDebounce";
 import { useEffect, useState } from "react";
 import { useFilters } from "../useFilters";
 import { Search } from "lucide-react";
+import s from "./SearchField.module.scss";
 
 export function SearchField() {
   const [searchTerm, setSearchTerm] = useState("");
@@ -14,9 +15,13 @@ export function SearchField() {
   }, [debouncedSearchTerm]);
 
   return (
-    <div>
-      <Search />
+    <div className={s.content}>
+      <div className={s.icon}>
+        <Search size={15} />
+      </div>
+
       <input
+        className={s.input}
         type="search"
         value={searchTerm}
         onChange={(e) => setSearchTerm(e.target.value)}

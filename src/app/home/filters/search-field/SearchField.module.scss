@@ -1,0 +1,18 @@
+.content {
+  display: flex;
+  align-items: center;
+  position: relative;
+  gap: 5px;
+  .icon {
+    position: absolute;
+    top: 13%;
+    left: 3%;
+  }
+  .input {
+    background-color: #4e486d;
+    border: #7c759d 1px solid;
+    border-radius: 3px;
+    padding: 5px 25px;
+    width: 100%;
+  }
+}

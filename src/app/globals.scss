@@ -7,7 +7,7 @@ $bar-width: 20%;
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
+    --background: #221e41;
     --foreground: #ededed;
   }
 }
@@ -22,6 +22,7 @@ body {
   color: var(--foreground);
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
+  font-size: 18px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -37,6 +38,16 @@ a {
   text-decoration: none;
 }
 
+button {
+  background-color: transparent;
+  border: none;
+}
+
+ul,
+li {
+  list-style: none;
+}
+
 .container {
   position: relative;
   > div:first-child,
@@ -50,13 +61,14 @@ a {
   }
   > div:first-child {
     left: 0;
-    border-right: #ededed 1px solid;
+    border-right: #7a3bf78d 1px solid;
   }
   > div:last-child {
     right: 0;
-    border-left: #ededed 1px solid;
+    border-left: #7a3bf78d 1px solid;
   }
   .center {
+    background-color: #2f2d52;
     min-height: 100vh;
     padding: 20px;
     margin: 0 $bar-width;

@@ -1,10 +1,8 @@
-.container {
-  width: 160px;
-}
 .selected {
-  background-color: #6c608883;
+  cursor: pointer;
+  width: 170px;
+  background-color: #6c6088;
   padding: 10px 20px;
-  border-radius: 5px;
   display: flex;
   align-items: center;
   :last-child {
@@ -13,6 +11,21 @@
 }
 
 .list {
-  background-color: #6c608883;
-  width: 100%;
+  position: absolute;
+  width: 170px;
+  z-index: 99;
+
+  background-color: #6c6088;
+  .item {
+    cursor: pointer;
+    padding: 10px 20px;
+    font-size: 13px;
+    &:hover {
+      background-color: #9a94a7;
+    }
+  }
+}
+
+.active {
+  background-color: #7841ed;
 }

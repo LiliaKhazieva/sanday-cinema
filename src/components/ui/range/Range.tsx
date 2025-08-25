@@ -1,9 +1,8 @@
 import { useEffect, useState } from "react";
-import s from "./Range.module.scss";
-import cn from "clsx";
 import { useDebounce } from "@/hooks/useDebounce";
 import Slider from "rc-slider";
 import "rc-slider/assets/index.css";
+import s from "./Range.module.scss";
 
 interface IRange {
   min?: number;
@@ -25,8 +24,8 @@ export function Range({
   const [fromValue, setFromValue] = useState(fromInitialValue);
   const [toValue, setToValue] = useState(toInitialValue);
 
-  const debouncedFromValue = useDebounce(fromValue, 500);
-  const debouncedToValue = useDebounce(toValue, 500);
+  const debouncedFromValue = useDebounce(fromValue, 500) || 0;
+  const debouncedToValue = useDebounce(toValue, 500) || 0;
 
   useEffect(() => {
     onChangeFromValue(debouncedFromValue);
@@ -42,7 +41,7 @@ export function Range({
         range
         min={min}
         max={max}
-        defaultValue={[fromInitialValue, toInitialValue]}
+        defaultValue={[fromInitialValue, toInitialValue || 0]}
         onChange={(value) => {
           if (typeof value === "object") {
             setFromValue(value[0]);
@@ -58,15 +57,7 @@ export function Range({
           backgroundColor: "lightblue",
         }}
       />
-      <div
-        style={{
-          fontSize: "14px",
-          display: "flex",
-          justifyContent: "space-between",
-          paddingTop: "5px",
-          opacity: 0.7,
-        }}
-      >
+      <div className={s.numbers}>
         <span>Oт: {fromInitialValue}$</span>
         <span>До: {toInitialValue}$</span>
       </div>

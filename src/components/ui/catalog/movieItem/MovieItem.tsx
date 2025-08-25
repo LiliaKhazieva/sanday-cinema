@@ -1,6 +1,6 @@
 "use client";
 
-import { IMovie } from "@/types/movie.interface";
+import { IMovie } from "@/types/movie.types";
 import { motion } from "framer-motion";
 import { Star } from "lucide-react";
 import Image from "next/image";
@@ -23,7 +23,7 @@ export const MovieItem = ({ movie }: { movie: IMovie }) => {
         <Image
           width={151}
           height={224}
-          src={movie.image || ""}
+          src={`/uploads/images/${movie.image}` || ""}
           alt={movie.title || ""}
           priority
         />

@@ -11,7 +11,7 @@ export function SearchField() {
   const { updatetQueryParams } = useFilters();
 
   useEffect(() => {
-    updatetQueryParams("seachTerm", debouncedSearchTerm);
+    updatetQueryParams("searchTerm", debouncedSearchTerm);
   }, [debouncedSearchTerm]);
 
   return (

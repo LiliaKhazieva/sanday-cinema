@@ -14,7 +14,7 @@ export interface IMovie {
 }
 
 export enum Genre {
-  Action = " Action",
+  Action = "Action",
   Comedy = "Comedy",
   Thriller = "Thriller",
   Horror = "Horror",

@@ -1,6 +1,6 @@
 export type TypeMovieDataFilters = {
   sort?: EnumMovieSort;
-  seachTerm?: string;
+  searchTerm?: string;
   genres?: string;
   rating?: string;
   minPrice?: string;

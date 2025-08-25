@@ -6,7 +6,6 @@ import { MovieService } from "@/services/movie.service";
 import SortDropdown from "../sort/SortDropdown";
 import { Catalog } from "@/components/ui/catalog/Catalog";
 import Pagination from "../pagination/Pagination";
-import Filters from "./Filters";
 
 export function MoviesPage() {
   const { queryParams, isFilterUpdated, updatetQueryParams } = useFilters();
@@ -18,7 +17,7 @@ export function MoviesPage() {
   });
   return (
     <div>
-      <h1>Movies</h1>
+      <h1 style={{ marginBottom: "10px" }}>Movies</h1>
       <SortDropdown />
       <Catalog
         movies={data?.movies || []}
@@ -27,7 +26,9 @@ export function MoviesPage() {
       <Pagination
         changePage={(page) => updatetQueryParams("page", page.toString())}
         currentPage={queryParams.page?.toString()}
-        numberPages={data?.length / +queryParams?.perPage}
+        numberPages={
+          (data?.length && data?.length / Number(queryParams?.perPage)) || 1
+        }
       />
     </div>
   );

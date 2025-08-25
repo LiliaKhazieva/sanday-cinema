@@ -3,6 +3,7 @@ import s from "./Select.module.scss";
 import { ISelect } from "./select.interface";
 import { useClickOutside } from "@/hooks/useClickOutside";
 import { ChevronDown } from "lucide-react";
+import { clsx } from "clsx";
 
 export function Select<K>({ data, onChange, value, title }: ISelect<K>) {
   const { isShow, setIsShow, ref } = useClickOutside(false);
@@ -20,10 +21,12 @@ export function Select<K>({ data, onChange, value, title }: ISelect<K>) {
       </button>
       {isShow && (
         <ul className={s.list} role="listbox">
-          {data.map((item) => (
+          {data.map((item, i) => (
             <li
               key={item.key?.toString()}
-              className=""
+              className={clsx(s.item, {
+                [s.active]: item.label === value?.label,
+              })}
               onClick={() => {
                 onChange(item);
                 setIsShow(false);

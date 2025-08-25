@@ -1,4 +1,4 @@
-import { Genre } from "@/types/movie.interface";
+import { Genre } from "@/types/movie.types";
 
 export const GENRE_VARIANTS: Genre[] = [
   Genre.Action,

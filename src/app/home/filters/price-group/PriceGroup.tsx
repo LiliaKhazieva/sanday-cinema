@@ -21,7 +21,7 @@ const PriceGroup = () => {
         onChangeToValue={(value) =>
           updatetQueryParams("maxPrice", value.toString())
         }
-      ></Range>
+      />
     </FilterWrapper>
   );
 };
